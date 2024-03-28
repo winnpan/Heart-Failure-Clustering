@@ -25,7 +25,7 @@ X2_scaled = scalar.fit_transform(X2)
 # Use elbow method to find the optimal k
 # Calculate the sum of squared errors 
 
-'''
+
 # Method 1
 sse = []
 rng = range(1, 50) 
@@ -49,7 +49,7 @@ plt.plot(rng, sse2, label='Ejection Fraction & Serum Creatinine')
 plt.plot(rng, sse, label='All 12 features')
 plt.legend() 
 plt.show()
-'''
+
 # Choose Method 2
 # Use K-Means for clustering
 num_clusters = 5
@@ -62,6 +62,7 @@ ypred = km.fit_predict(X2_scaled)
 # Filter rows of X2_scaled data
 # Get the unique labels
 clusters = np.unique(ypred)
+plt.figure()
  
 for i in clusters:
     plt.scatter(X2_scaled[ypred == i , 0] , X2_scaled[ypred == i , 1] , label = i)
